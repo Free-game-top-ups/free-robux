@@ -31,22 +31,21 @@
 
 <style>
   :root {
-    --bg-main: #f2f4f5;       /* رمادي فاتح جداً زي روبلوكس */
-    --bg-card: #ffffff;       /* كروت بيضاء */
-    --text-dark: #232527;     /* أسود ناعم */
-    --text-light: #6b7280;    /* رمادي للنص */
-    --btn-dark: #232527;      /* زرار روبلوكس الأساسي (أسود) */
-    --btn-hover: #393b3d;     /* أسود أفتح */
-    --accent-green: #00a2ff;  /* أزرق روبلوكس للهايلايت (شوف اللوجو الرسمي) */
-    --robux-green: #00b06f;   /* أخضر الروبوكس */
-    --border: #e2e6e9;        /* حدود فاتحة */
-    --brand-red: #e2231a;     /* أحمر روبلوكس */
+    --bg-main: #f2f4f5;
+    --bg-card: #ffffff;
+    --text-dark: #232527;
+    --text-light: #6b7280;
+    --btn-dark: #232527;
+    --btn-hover: #393b3d;
+    --robux-green: #00b06f;
+    --border: #e2e6e9;
+    --brand-red: #e2231a;
   }
 
   * { margin:0; padding:0; box-sizing:border-box; font-family: 'Hind', sans-serif; }
   body { background: var(--bg-main); color: var(--text-dark); overflow-x: hidden; line-height: 1.6; }
 
-  /* ═══ Header — زي روبلوكس ═══ */
+  /* ═══ Header ═══ */
   .header {
     display: flex; justify-content: space-between; align-items: center;
     padding: 12px 30px; background: #fff; border-bottom: 1px solid var(--border);
@@ -59,25 +58,11 @@
   .nav-links { display: flex; gap: 30px; font-weight: 600; font-size: 15px; }
   .nav-links a { color: var(--text-dark); text-decoration: none; transition: color 0.2s; }
   .nav-links a:hover { color: var(--brand-red); }
-  
-  .header-right { display: flex; gap: 10px; align-items:center; }
-  .btn-login {
-    background: var(--btn-dark); color: #fff; border: none;
-    padding: 8px 20px; border-radius: 6px; font-weight: 700; cursor: pointer;
-    transition: all 0.2s; font-family: inherit; font-size: 14px;
-  }
-  .btn-login:hover { background: var(--btn-hover); }
-  .btn-signup {
-    background: #fff; color: var(--text-dark); border: 1px solid var(--border);
-    padding: 8px 20px; border-radius: 6px; font-weight: 700; cursor: pointer;
-    transition: all 0.2s; font-family: inherit; font-size: 14px;
-  }
-  .btn-signup:hover { background: #f8f9fa; }
 
   /* ═══ Hero Banner ═══ */
   .hero {
     position: relative; height: 480px; 
-    background: linear-gradient(90deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0) 100%), url('https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+    background: linear-gradient(90deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.75) 50%, rgba(255,255,255,0.1) 100%), url('https://images.unsplash.com/photo-1603481588273-2f908a9a7a1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
     display: flex; align-items: center; padding: 0 60px;
     border-bottom: 1px solid var(--border);
   }
@@ -90,11 +75,11 @@
     background: var(--btn-dark); color: #fff; border: none;
     padding: 16px 45px; border-radius: 8px; font-size: 18px; font-weight: 800;
     cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: all 0.2s;
-    font-family: inherit; text-transform: uppercase; letter-spacing: 0.5px;
+    font-family: inherit; letter-spacing: 0.5px;
   }
   .btn-buy:hover { background: var(--btn-hover); transform: translateY(-2px); }
 
-  /* ═══ Stats Bar — شكل روبلوكس ═══ */
+  /* ═══ Stats Bar ═══ */
   .stats-bar {
     background: #fff; padding: 20px; border-bottom: 1px solid var(--border);
     display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;
@@ -123,9 +108,14 @@
   }
 
   .robux-img {
-    width: 80px; height: 80px; margin: 0 auto 15px; 
-    background-image: url('https://i.ibb.co/p6P05Cjy/1001396788.jpg'); /* استخدام صورتك */
-    background-size: cover; border-radius: 12px; border: 2px solid var(--border);
+    width: 80px; height: 80px; margin: 0 auto 15px;
+    background: #f8f9fa; border-radius: 50%; border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
+  }
+  .robux-img svg {
+    width: 45px; height: 45px; fill: var(--robux-green);
+    filter: drop-shadow(0 2px 4px rgba(0,176,111,0.3));
   }
   
   .pkg-amount { font-family: 'Montserrat', sans-serif; font-size: 28px; font-weight: 900; color: var(--text-dark); margin-bottom: 5px; }
@@ -216,7 +206,7 @@
   @media (max-width: 768px) {
     .header { padding: 15px 20px; }
     .nav-links { display: none; }
-    .hero { padding: 0 20px; height: 400px; background: linear-gradient(0deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.5) 100%), url('https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat; }
+    .hero { padding: 0 20px; height: 400px; background: linear-gradient(0deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.6) 100%), url('https://images.unsplash.com/photo-1603481588273-2f908a9a7a1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat; }
     .hero h1 { font-size: 38px; }
     .hero p { font-size: 15px; }
     .btn-buy { padding: 14px 30px; font-size: 16px; width:100%; }
@@ -224,6 +214,7 @@
     .grid { grid-template-columns: 1fr 1fr; gap: 10px; }
     .pkg-card { padding: 20px 10px; }
     .robux-img { width: 60px; height: 60px; }
+    .robux-img svg { width: 32px; height: 32px; }
     .pkg-amount { font-size: 22px; }
     .features { flex-direction: column; align-items: flex-start; gap: 20px; padding: 30px 20px; }
     .ad-slot-desktop { display: none; }
@@ -235,7 +226,7 @@
 </head>
 <body>
 
-<!-- ═══ Header ═══ -->
+<!-- ═══ Header (بدون أزرار تسجيل الدخول) ═══ -->
 <header class="header">
   <div class="logo">
     <img src="https://i.ibb.co/p6P05Cjy/1001396788.jpg" alt="Robux">
@@ -247,18 +238,14 @@
     <a href="#">المكافآت</a>
     <a href="#">الدعم</a>
   </nav>
-  <div class="header-right">
-    <button class="btn-signup">Sign Up</button>
-    <button class="btn-login">Log In</button>
-  </div>
 </header>
 
 <!-- ═══ Hero Banner ═══ -->
 <section class="hero">
   <div class="hero-content">
     <h1>احصل على <span>روبوكس</span> مجاناً!</h1>
-    <p>شحن فوري وآمن. اختر الباقة التي تناسبك وادخل اسم المستخدم الخاص بك.</p>
-    <button class="btn-buy" onclick="openModal()">ابدأ الشحن الآن</button>
+    <p>شحن فوري وآمن. اختر الباقة التي تناسبك واحصل عليها مجاناً.</p>
+    <button class="btn-buy" onclick="openModal()">احصل عليها مجاناً</button>
   </div>
 </section>
 
@@ -284,28 +271,36 @@
   <div class="grid">
 
     <div class="pkg-card" data-amount="400">
-      <div class="robux-img"></div>
+      <div class="robux-img">
+        <svg viewBox="0 0 24 24"><path d="M14.36 14.36l-2.36-2.36 2.36-2.36-2.36-2.36H9.64l2.36 2.36-2.36 2.36 2.36 2.36H14.36zM12 0l12 12-12 12L0 12z"/></svg>
+      </div>
       <div class="pkg-amount">400 <span>R$</span></div>
       <div class="pkg-price">FREE</div>
       <button class="btn-select" onclick="selectPackage(this, 400)">SELECT</button>
     </div>
 
     <div class="pkg-card" data-amount="800">
-      <div class="robux-img"></div>
+      <div class="robux-img">
+        <svg viewBox="0 0 24 24"><path d="M14.36 14.36l-2.36-2.36 2.36-2.36-2.36-2.36H9.64l2.36 2.36-2.36 2.36 2.36 2.36H14.36zM12 0l12 12-12 12L0 12z"/></svg>
+      </div>
       <div class="pkg-amount">800 <span>R$</span></div>
       <div class="pkg-price">FREE</div>
       <button class="btn-select" onclick="selectPackage(this, 800)">SELECT</button>
     </div>
 
     <div class="pkg-card selected" data-amount="1700">
-      <div class="robux-img"></div>
+      <div class="robux-img">
+        <svg viewBox="0 0 24 24"><path d="M14.36 14.36l-2.36-2.36 2.36-2.36-2.36-2.36H9.64l2.36 2.36-2.36 2.36 2.36 2.36H14.36zM12 0l12 12-12 12L0 12z"/></svg>
+      </div>
       <div class="pkg-amount">1700 <span>R$</span></div>
       <div class="pkg-price">FREE</div>
       <button class="btn-select" onclick="selectPackage(this, 1700)">SELECT</button>
     </div>
 
     <div class="pkg-card" data-amount="4500">
-      <div class="robux-img"></div>
+      <div class="robux-img">
+        <svg viewBox="0 0 24 24"><path d="M14.36 14.36l-2.36-2.36 2.36-2.36-2.36-2.36H9.64l2.36 2.36-2.36 2.36 2.36 2.36H14.36zM12 0l12 12-12 12L0 12z"/></svg>
+      </div>
       <div class="pkg-amount">4500 <span>R$</span></div>
       <div class="pkg-price">FREE</div>
       <button class="btn-select" onclick="selectPackage(this, 4500)">SELECT</button>
