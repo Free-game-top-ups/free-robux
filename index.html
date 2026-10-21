@@ -62,7 +62,8 @@
   /* ═══ Hero Banner ═══ */
   .hero {
     position: relative; height: 480px; 
-    background: linear-gradient(90deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.75) 50%, rgba(255,255,255,0.1) 100%), url('https://images.unsplash.com/photo-1603481588273-2f908a9a7a1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+    /* صورة الخلفية بتاخد من image1.png */
+    background: linear-gradient(90deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.75) 50%, rgba(255,255,255,0.1) 100%), url('image1.png') center/cover no-repeat;
     display: flex; align-items: center; padding: 0 60px;
     border-bottom: 1px solid var(--border);
   }
@@ -206,7 +207,10 @@
   @media (max-width: 768px) {
     .header { padding: 15px 20px; }
     .nav-links { display: none; }
-    .hero { padding: 0 20px; height: 400px; background: linear-gradient(0deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.6) 100%), url('https://images.unsplash.com/photo-1603481588273-2f908a9a7a1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat; }
+    .hero { padding: 0 20px; height: 400px; 
+      /* نفس صورة الخلفية للموبايل */
+      background: linear-gradient(0deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.6) 100%), url('image1.png') center/cover no-repeat; 
+    }
     .hero h1 { font-size: 38px; }
     .hero p { font-size: 15px; }
     .btn-buy { padding: 14px 30px; font-size: 16px; width:100%; }
@@ -226,7 +230,7 @@
 </head>
 <body>
 
-<!-- ═══ Header (بدون أزرار تسجيل الدخول) ═══ -->
+<!-- ═══ Header ═══ -->
 <header class="header">
   <div class="logo">
     <img src="https://i.ibb.co/p6P05Cjy/1001396788.jpg" alt="Robux">
@@ -272,36 +276,37 @@
 
     <div class="pkg-card" data-amount="400">
       <div class="robux-img">
-        <svg viewBox="0 0 24 24"><path d="M14.36 14.36l-2.36-2.36 2.36-2.36-2.36-2.36H9.64l2.36 2.36-2.36 2.36 2.36 2.36H14.36zM12 0l12 12-12 12L0 12z"/></svg>
+        <!-- أيقونة 3D شكل عملة -->
+        <svg viewBox="0 0 24 24"><path d="M12 0L2 12l10 12 10-12L12 0zm0 4.5l6.5 7.5-6.5 7.5-6.5-7.5L12 4.5zM12 8l3 4-3 4-3-4 3-4z"/></svg>
       </div>
-      <div class="pkg-amount">400 <span>R$</span></div>
+      <div class="pkg-amount">400 <span>RBX</span></div>
       <div class="pkg-price">FREE</div>
       <button class="btn-select" onclick="selectPackage(this, 400)">SELECT</button>
     </div>
 
     <div class="pkg-card" data-amount="800">
       <div class="robux-img">
-        <svg viewBox="0 0 24 24"><path d="M14.36 14.36l-2.36-2.36 2.36-2.36-2.36-2.36H9.64l2.36 2.36-2.36 2.36 2.36 2.36H14.36zM12 0l12 12-12 12L0 12z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 0L2 12l10 12 10-12L12 0zm0 4.5l6.5 7.5-6.5 7.5-6.5-7.5L12 4.5zM12 8l3 4-3 4-3-4 3-4z"/></svg>
       </div>
-      <div class="pkg-amount">800 <span>R$</span></div>
+      <div class="pkg-amount">800 <span>RBX</span></div>
       <div class="pkg-price">FREE</div>
       <button class="btn-select" onclick="selectPackage(this, 800)">SELECT</button>
     </div>
 
     <div class="pkg-card selected" data-amount="1700">
       <div class="robux-img">
-        <svg viewBox="0 0 24 24"><path d="M14.36 14.36l-2.36-2.36 2.36-2.36-2.36-2.36H9.64l2.36 2.36-2.36 2.36 2.36 2.36H14.36zM12 0l12 12-12 12L0 12z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 0L2 12l10 12 10-12L12 0zm0 4.5l6.5 7.5-6.5 7.5-6.5-7.5L12 4.5zM12 8l3 4-3 4-3-4 3-4z"/></svg>
       </div>
-      <div class="pkg-amount">1700 <span>R$</span></div>
+      <div class="pkg-amount">1700 <span>RBX</span></div>
       <div class="pkg-price">FREE</div>
       <button class="btn-select" onclick="selectPackage(this, 1700)">SELECT</button>
     </div>
 
     <div class="pkg-card" data-amount="4500">
       <div class="robux-img">
-        <svg viewBox="0 0 24 24"><path d="M14.36 14.36l-2.36-2.36 2.36-2.36-2.36-2.36H9.64l2.36 2.36-2.36 2.36 2.36 2.36H14.36zM12 0l12 12-12 12L0 12z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 0L2 12l10 12 10-12L12 0zm0 4.5l6.5 7.5-6.5 7.5-6.5-7.5L12 4.5zM12 8l3 4-3 4-3-4 3-4z"/></svg>
       </div>
-      <div class="pkg-amount">4500 <span>R$</span></div>
+      <div class="pkg-amount">4500 <span>RBX</span></div>
       <div class="pkg-price">FREE</div>
       <button class="btn-select" onclick="selectPackage(this, 4500)">SELECT</button>
     </div>
@@ -468,12 +473,12 @@
         clearInterval(interval);
         document.querySelectorAll('.step-content').forEach(el => el.classList.remove('active'));
         document.getElementById('step3').classList.add('active');
-        document.getElementById('successAmount').value = selectedAmount + ' R$';
+        document.getElementById('successAmount').value = selectedAmount + ' RBX';
         document.getElementById('successMsg').textContent = `تم إرسال الروبوكس بنجاح إلى ${name}.`;
       }
     }, 1000);
   }
 </script>
-<script async src="https://js.wpadmngr.com/static/adManager.js" data-admpid="468443"></script>
+
 </body>
-  </html>
+  </html> 
